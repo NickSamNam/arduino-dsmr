@@ -219,8 +219,8 @@ DEFINE_FIELD(power_delivered, FixedValue, ObisId(1, 0, 1, 7, 0), FixedField, uni
 /* Actual electricity power received (-P) in 1 Watt resolution */
 DEFINE_FIELD(power_returned, FixedValue, ObisId(1, 0, 2, 7, 0), FixedField, units::kW, units::W);
 
-/* The actual threshold Electricity in kW. Removed in 4.0.7 / 4.2.2 / 5.0 */
-DEFINE_FIELD(electricity_threshold, FixedValue, ObisId(0, 0, 17, 0, 0), FixedField, units::kW, units::W);
+/* The actual threshold Electricity in A. Changed to Watts in later versions. */
+DEFINE_FIELD(electricity_threshold, uint32_t, ObisId(0, 0, 17, 0, 0), IntField, units::A);
 
 /* Switch position Electricity (in/out/enabled). Removed in 4.0.7 / 4.2.2 / 5.0 */
 DEFINE_FIELD(electricity_switch_position, uint8_t, ObisId(0, 0, 96, 3, 10), IntField, units::none);
